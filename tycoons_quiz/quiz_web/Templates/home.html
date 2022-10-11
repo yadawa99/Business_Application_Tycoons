@@ -41,11 +41,30 @@ font-weight:bold ;
 #color:#FFA07A;
 font-weight:bold ;
 }
+.Tchr{
+ position: absolute;
+ top: 77.5%;
+ left : 19.5%;
+ transform: translate(-45%,-100%);
+ filter: brightness(90%);
+ border: 3px solid #555;
+ border-radius: 5px;
+}
+.ITchr{
+color: white;
+text-align: center;
+padding: 8px;
+font-weight: bold;
+font-size: 14px;
+border-radius: 1px;
+background-color: rgb(119, 119, 214);
+}
+
 
 .login__submit {
     position: absolute;
-    left: 50%;
-    top: 80%;
+    left: 20%;
+    top: 82.5%;
     transform: translate(-50%, -10%);
 	background: #fff;
 	font-size: 20px;
@@ -73,6 +92,8 @@ font-weight:bold ;
 	margin-left: auto;
 	color: #7875B5;
 }
+
+
 </style>
 </head>
 <body>
@@ -89,12 +110,23 @@ font-weight:bold ;
     <hr class="w3-border-grey" style="margin:auto;width:60%;height:1px">
     <p class="w3-large w3-center">Spark Your Knowledge</p>
   </div>
+    <div class="Tchr">
+      <img src="../Image/8600.jpg"
+           width="250"
+           height="200"
+
+      />
+        <div class="ITchr"><label for="Teacher">I am a teacher</label>
+        </div>
+  </div>
   <div>
     <button class="button login__submit">
-        <span class="button__text">Log In Now</span>
+        <span class="button__text">Log In As a Teacher</span>
         <i class="button__icon fa fa-chevron-right"></i>
     </button>
   </div>
+  </div>
+
 </div>
 
 </body>
