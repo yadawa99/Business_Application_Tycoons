@@ -59,7 +59,24 @@ font-size: 14px;
 border-radius: 1px;
 background-color: rgb(119, 119, 214);
 }
-
+.Stdnt{
+ position: absolute;
+ top: 77.5%;
+ left : 79.5%;
+ transform: translate(-45%,-100%);
+ filter: brightness(90%);
+ border: 3px solid #555;
+ border-radius: 5px;
+}
+.IStdnt{
+color: white;
+text-align: center;
+padding: 8px;
+font-weight: bold;
+font-size: 14px;
+border-radius: 1px;
+background-color: rgb(119, 119, 214);
+}
 
 .login__submit {
     position: absolute;
@@ -88,6 +105,37 @@ background-color: rgb(119, 119, 214);
 	outline: none;
 }
 .button__icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: #7875B5;
+}
+.login__submit2 {
+    position: absolute;
+    left: 80%;
+    top: 82.5%;
+    transform: translate(-50%, -10%);
+	background: #fff;
+	font-size: 20px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 25%;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
+}
+.login__submit2:active,
+.login__submit2:focus,
+.login__submit2:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+.button__icon2 {
 	font-size: 24px;
 	margin-left: auto;
 	color: #7875B5;
@@ -125,6 +173,21 @@ background-color: rgb(119, 119, 214);
         <i class="button__icon fa fa-chevron-right"></i>
     </button>
   </div>
+  </div>
+  <div class="Stdnt">
+      <img src="../Image/Study-area.jpg"
+           width="250"
+           height="200"
+
+      />
+        <div class="IStdnt"><label for="Student">I am a student</label>
+        </div>
+    </div>
+  <div>
+    <button class="button login__submit2">
+        <span class="button__text2">Log In As a Student</span>
+        <i class="button__icon2 fa fa-chevron-right"></i>
+    </button>
   </div>
 
 </div>
