@@ -145,12 +145,12 @@ background-color: #460C09;
 
 
 </style>
-
+{% load static%}
 <body>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="Logo">
-      <img src="{%static%}}"
+      <img src="{%static 'Image/Logo.png'%}"
            width="325"
            height="325"
       />
@@ -161,7 +161,7 @@ background-color: #460C09;
     <p class="w3-large w3-center">Spark Your Knowledge</p>
   </div>
     <div class="Tchr">
-      <img src="../Image/8600.jpg"
+      <img src="{%static 'Image/8600.jpg'%}"
            width="250"
            height="200"
 
@@ -179,7 +179,7 @@ background-color: #460C09;
   </div>
   </div>
   <div class="Stdnt">
-      <img src="../Image/Study-area.jpg"
+      <img src="{%static 'Image/Study-area.jpg'%}"
            width="250"
            height="200"
 
