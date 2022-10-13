@@ -25,3 +25,11 @@ class Question(models.Model):
     
     def get_answers(self):
         return self.answer_set.all()
+
+class Answer(models.Model):
+    content = models.CharField(max_length=200)
+    correct = models.BooleanField(default=False)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"question: {self.question.content}, answer: {self.content}, correct: {self.correct}"
