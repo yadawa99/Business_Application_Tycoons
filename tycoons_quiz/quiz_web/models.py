@@ -33,3 +33,11 @@ class Answer(models.Model):
     
     def __str__(self):
         return f"question: {self.question.content}, answer: {self.content}, correct: {self.correct}"
+
+class Marks_Of_User(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    score = models.FloatField()
+    
+    def __str__(self):
+        return str(self.quiz)
