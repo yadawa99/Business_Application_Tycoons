@@ -37,7 +37,7 @@ body {
 	position: relative;
 	height: 600px;
 	width: 360px;
-	box-shadow: 0px 0px 24px #460C09;
+	box-shadow: 0px 0px 24px #FA3030;
 }
 
 .screen__content {
@@ -112,7 +112,7 @@ body {
 .login__icon {
 	position: absolute;
 	top: 30px;
-	color: #7875B5;
+	color: #FA3030;
 }
 
 .login__input {
@@ -139,14 +139,14 @@ body {
 	margin-top: 30px;
 	padding: 16px 20px;
 	border-radius: 26px;
-	border: 1px solid #D4D3E8;
+	border: 1px solid #460C09;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 	width: 100%;
-	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
+	color: #FA3030;
+	box-shadow: 0px 2px 2px #FA3030;
 	cursor: pointer;
 	transition: .2s;
 }
@@ -154,42 +154,40 @@ body {
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-	border-color: #6A679E;
+	border-color: #460C09;
 	outline: none;
 }
 
 .button__icon {
 	font-size: 24px;
 	margin-left: auto;
-	color: #7875B5;
+	color: #FA3030;
 }
-
-.social-login {
-	position: absolute;
-	height: 140px;
-	width: 160px;
-	text-align: center;
-	bottom: 0px;
-	right: 0px;
-	color: #fff;
-}
-
-.social-icons {
+.login__submit2 {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #460C09;
+	text-transform: uppercase;
+	font-weight: 700;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	width: 100%;
+	color: #FA3030;
+	box-shadow: 0px 2px 2px #FA3030;
+	cursor: pointer;
+	transition: .2s;
+}
+.login__submit2:active,
+.login__submit2:focus,
+.login__submit2:hover {
+	border-color: #460C09;
+	outline: none;
 }
 
-.social-login__icon {
-	padding: 20px 10px;
-	color: #fff;
-	text-decoration: none;
-	text-shadow: 0px 0px 8px #7875B5;
-}
 
-.social-login__icon:hover {
-	transform: scale(1.5);
-}
     </style>
 </head>
 <body>
@@ -198,18 +196,24 @@ body {
 		<div class="screen__content">
 			<form class="login">
 				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="User name / Email">
+					<i class="login__icon fa fa-user"></i>
+					<input type="text" class="login__input" placeholder="User name">
 				</div>
 				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
+					<i class="login__icon fa fa-lock"></i>
 					<input type="password" class="login__input" placeholder="Password">
 				</div>
 				<button class="button login__submit">
 					<span class="button__text">Log In Now</span>
-					<i class="button__icon fas fa-chevron-right"></i>
+					<i class="button__icon fa fa-chevron-right"></i>
 				</button>
+				<button class="button login__submit2">
+					<span class="button__text">Sign Up Now</span>
+					<i class="button__icon fa fa-chevron-right"></i>
+				</button>
+
 			</form>
+
 
 		</div>
 		<div class="screen__background">
