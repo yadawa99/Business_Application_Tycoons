@@ -18,7 +18,7 @@ Including another URLconf
 """
 
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("quiz_web.urls")),
-}
+]
