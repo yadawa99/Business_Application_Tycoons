@@ -196,10 +196,12 @@ body {
 
     </style>
 </head>
+{% load static%}
 <body>
 <div class="container">
 	<div class="screen">
-		<div class="screen__content"><img src="../Image/Logo.png" class="logo"
+		<div class="screen__content">
+			<img src="{%static 'Image/8600.jpg'%}" class="logo"
            width="100"
            height="100"/>
 			<form class="login">
