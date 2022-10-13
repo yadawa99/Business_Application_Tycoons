@@ -1,6 +1,6 @@
-from django.urls import path
-from .views import *
 
+from django.urls import path, include
+from django.contrib import admin
 """tycoons_quiz URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,7 +18,7 @@ Including another URLconf
 """
 
 
-urlpatterns = [
+urlpatterns = {
     path('admin/', admin.site.urls),
-    path('home/',views.home, name="home"),
-]
+    path('', include("quiz_web.urls")),
+}
