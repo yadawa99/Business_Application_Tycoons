@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block css %}
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link
@@ -140,12 +137,12 @@ background-color: rgb(119, 119, 214);
 	margin-left: auto;
 	color: #7875B5;
 }
-
+ {% endblock %}
 
 </style>
-</head>
-<body>
 
+<body>
+{% block content %}
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="Logo">
       <img src="../Image/Logo.png"
@@ -189,8 +186,6 @@ background-color: rgb(119, 119, 214);
         <i class="button__icon2 fa fa-chevron-right"></i>
     </button>
   </div>
-
-</div>
-
+{% endblock %}
 </body>
-</html>
+
