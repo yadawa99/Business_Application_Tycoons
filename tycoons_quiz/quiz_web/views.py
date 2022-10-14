@@ -174,5 +174,5 @@ def Signup(request):
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-        return render(request, 'login.html')  
-    return render(request, "signup.html")
+        return render(request, 'quiz_web/login.html')  
+    return render(request, "quiz_web/signup.html")
