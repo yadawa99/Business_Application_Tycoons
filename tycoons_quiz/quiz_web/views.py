@@ -156,9 +156,9 @@ def Logout(request):
     logout(request)
     return redirect('/')
 
-def signup(request):
+def Signup(request):
     if request.user.is_authenticated:
-        return render(request, 'quiz_web/login.html')  
+        return redirect('/')
     if request.method=="POST":   
         username = request.POST['username']
         email = request.POST['email']
@@ -174,16 +174,8 @@ def signup(request):
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         return render(request, 'quiz_web/login.html')  
     return render(request, "quiz_web/signup.html")
-    #redirect('/')
-=======
-        return render(request, 'quiz_web/login.html')
-    return render(request, "quiz_web/signup.html")
->>>>>>> 70d17800cf70dac9e14a622e3c47a72d6e313508
-=======
-        return render(request, 'quiz_web/login.html')
-    return render(request, "quiz_web/signup.html")
->>>>>>> 70d17800cf70dac9e14a622e3c47a72d6e313508
+    
+
