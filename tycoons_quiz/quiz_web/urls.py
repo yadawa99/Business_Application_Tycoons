@@ -5,15 +5,15 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("addq/", views.add_quizes, name="addq"),
     path("main/",views.main, name="main"),
-    path("about_us/", views.about_us, name="about_us")
+    path("about_us/", views.about_us, name="about_us"),
 
     path("<int:myid>/", views.quiz, name="quiz"), 
     path('<int:myid>/data/', views.quiz_data_view, name='quiz-data'),
     path('<int:myid>/save/', views.save_quiz_view, name='quiz-save'),
     
-    path("signup/", views.Signup, name="signup"),
-    path("login/", views.Login, name="login"),
-    path("logout/", views.Logout, name="logout"),
+    #path("signup/", views.Signup, name="signup"),
+    #path("login/", views.Login, name="login"),
+    #path("logout/", views.Logout, name="logout"),
     
   
     path('add_question/', views.add_question, name='add_question'),  
