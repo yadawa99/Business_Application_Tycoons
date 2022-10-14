@@ -76,3 +76,20 @@ def main(request):
 def about_us(request):
     return render(request, 'quiz_web/about_us.html')
 
+@login_required(login_url = '/login')
+def quiz(request, myid):
+    quiz = Quiz.objects.get(id=myid)
+    return render(request, "quiz.html", {'quiz':quiz})
+
+def quiz_data_view(request, myid):
+    quiz = Quiz.objects.get(id=myid)
+    questions = []
+    for q in quiz.get_questions():
+        answers = []
+        for a in q.get_answers():
+            answers.append(a.content)
+        questions.append({str(q): answers})
+    return JsonResponse({
+        'data': questions,
+        'time': quiz.time,
+    })
