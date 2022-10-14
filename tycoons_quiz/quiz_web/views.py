@@ -136,7 +136,7 @@ def save_quiz_view(request, myid):
         
         return JsonResponse({'passed': True, 'score': score, 'marks': marks})
 
-def Login(request):
+def login(request):
     if request.user.is_authenticated:
         return redirect('/')
     if request.method=="POST":
@@ -149,8 +149,8 @@ def Login(request):
             login(request, user)
             return redirect("/")
         else:
-            return render(request, "login.html") 
-    return render(request, "login.html")
+            return render(request, "quiz_web/login.html")
+    return render(request, "quiz_web/login.html")
 
 def Logout(request):
     logout(request)
