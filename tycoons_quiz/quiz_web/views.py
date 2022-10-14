@@ -52,4 +52,7 @@ def add_options(request, myid):
             formset.save()
             alert = True
             return render(request, "add_options.html", {'alert':alert})
+        else:
+            formset=QuestionFormSet(instance=question)
+        return render(request, "add_options.html", {'formset':formset, 'question':question})
 
