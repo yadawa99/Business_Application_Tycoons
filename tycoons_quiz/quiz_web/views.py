@@ -23,3 +23,15 @@ def add_quizes(response):
     else:
         form=QuizForm()
     return render(response, 'quiz_web/add_quizes.html',{"form":form})
+
+def add_question(request):
+    questions = Question.objects.all()
+    questions = Question.objects.filter().order_by('-id')
+    if request.method=="POST":
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, "add_question.html")
+    else:
+        form=QuestionForm()
+    return render(request, "add_question.html", {'form':form, 'questions':questions})
