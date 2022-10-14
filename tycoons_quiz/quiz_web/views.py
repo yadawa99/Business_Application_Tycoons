@@ -135,4 +135,44 @@ def save_quiz_view(request, myid):
         Marks_Of_User.objects.create(quiz=quiz, user=user, score=score)
         
         return JsonResponse({'passed': True, 'score': score, 'marks': marks})
-    
+
+def Login(request):
+    if request.user.is_authenticated:
+        return redirect('/')
+    if request.method=="POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = authenticate(username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect("/")
+        else:
+            return render(request, "login.html") 
+    return render(request, "login.html")
+
+def Logout(request):
+    logout(request)
+    return redirect('/')
+
+def Signup(request):
+    if request.user.is_authenticated:
+        return redirect('/')
+    if request.method=="POST":   
+        username = request.POST['username']
+        email = request.POST['email']
+        first_name=request.POST['first_name']
+        last_name=request.POST['last_name']
+        password = request.POST['password1']
+        confirm_password = request.POST['password2']
+        
+        if password != confirm_password:
+            return redirect('/register')
+        
+        user = User.objects.create_user(username, email, password)
+        user.first_name = first_name
+        user.last_name = last_name
+        user.save()
+        return render(request, 'login.html')  
+    return render(request, "signup.html")
