@@ -12,7 +12,7 @@ urlpatterns = [
     path('<int:myid>/save/', views.save_quiz_view, name='quiz-save'),
     
     #path("signup/", views.Signup, name="signup"),
-    #path("login/", views.Login, name="login"),
+    path("login/", views.login, name="login"),
     #path("logout/", views.Logout, name="logout"),
     
   
