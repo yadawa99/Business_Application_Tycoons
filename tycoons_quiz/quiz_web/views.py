@@ -158,7 +158,7 @@ def Logout(request):
 
 def Signup(request):
     if request.user.is_authenticated:
-        return redirect('/')
+        return render(request, 'quiz_web/login.html')  
     if request.method=="POST":   
         username = request.POST['username']
         email = request.POST['email']
@@ -169,10 +169,11 @@ def Signup(request):
         
         if password != confirm_password:
             return redirect('/register')
-        
+    
         user = User.objects.create_user(username, email, password)
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-        return render(request, 'login.html')  
-    return render(request, "signup.html")
+        return render(request, 'quiz_web/login.html')  
+    return render(request, "quiz_web/signup.html")
+    #redirect('/')
