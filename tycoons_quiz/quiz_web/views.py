@@ -22,7 +22,7 @@ def add_quizes(response):
             quiz = form.save(commit=False)
             quiz.save()
             obj = form.instance
-            return render(response, "add_quizes.html", {'obj':obj})
+            return render(response, "quiz_web/add_quizes.html", {'obj':obj})
     else:
         form=QuizForm()
     return render(response, 'quiz_web/add_quizes.html',{"form":form})
@@ -34,17 +34,17 @@ def add_question(request):
         form = QuestionForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, "add_question.html")
+            return render(request, "quiz_web/add_question.html")
     else:
         form=QuestionForm()
-    return render(request, "add_question.html", {'form':form, 'questions':questions})
+    return render(request, "quiz_web/add_question.html", {'form':form, 'questions':questions})
 
 def delete_question(request, myid):
     question = Question.objects.get(id=myid)
     if request.method == "POST":
         question.delete()
         return redirect('/add_question')
-    return render(request, "delete_question.html", {'question':question})
+    return render(request, "quiz_web/delete_question.html", {'question':question})
 
 def add_options(request, myid):
     question = Question.objects.get(id=myid)
@@ -54,14 +54,14 @@ def add_options(request, myid):
         if formset.is_valid():
             formset.save()
             alert = True
-            return render(request, "add_options.html", {'alert':alert})
+            return render(request, "quiz_web/add_answers.html", {'alert':alert})
         else:
             formset=QuestionFormSet(instance=question)
-        return render(request, "add_options.html", {'formset':formset, 'question':question})
+        return render(request, "quiz_web/add_answers.html", {'formset':formset, 'question':question})
 
 def results(request):
     marks = Marks_Of_User.objects.all()
-    return render(request, "results.html", {'marks':marks})
+    return render(request, "quiz_web/results.html", {'marks':marks})
 
 def delete_result(request, myid):
     marks = Marks_Of_User.objects.get(id=myid)
@@ -79,7 +79,7 @@ def about_us(request):
 @login_required(login_url = '/login')
 def quiz(request, myid):
     quiz = Quiz.objects.get(id=myid)
-    return render(request, "quiz.html", {'quiz':quiz})
+    return render(request, "quiz_web/quiz.html", {'quiz':quiz})
 
 def quiz_data_view(request, myid):
     quiz = Quiz.objects.get(id=myid)
