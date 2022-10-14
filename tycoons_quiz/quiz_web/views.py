@@ -147,7 +147,7 @@ def login(request):
         
         if user is not None:
             login(request, user)
-            return redirect("quiz_web/main.html")
+            return redirect("/")
         else:
             return render(request, "quiz_web/login.html")
     return render(request, "quiz_web/login.html")
@@ -176,6 +176,6 @@ def Signup(request):
         user.save()
 
         return render(request, 'quiz_web/login.html')  
-    return render(request, "quiz_web/signup.html")
+    return render(request, "quiz_web/main.html")
     
 
