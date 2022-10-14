@@ -72,7 +72,7 @@ def delete_result(request, myid):
 def main(request):
     quiz = Quiz.objects.all()
     para = {'quiz' : quiz}
-    return render(request, "quiz_web/main.html", para)
-def about_us(response):
-    return render(response, 'quiz_web/about_us.html')
-    return render(response, 'quiz_web/about_us.html')
+    return render(request, 'quiz_web/main.html', para )
+def about_us(request):
+    return render(request, 'quiz_web/about_us.html')
+
