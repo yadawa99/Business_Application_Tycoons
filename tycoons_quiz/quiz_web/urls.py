@@ -12,7 +12,11 @@ urlpatterns = [
     path('<int:myid>/save/', views.save_quiz_view, name='quiz-save'),
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     path("signup/", views.Signup, name="signup"),
+=======
+    path("signup/", views.signup, name="signup"),
+>>>>>>> 70d17800cf70dac9e14a622e3c47a72d6e313508
 =======
     path("signup/", views.signup, name="signup"),
 >>>>>>> 70d17800cf70dac9e14a622e3c47a72d6e313508

@@ -175,9 +175,14 @@ def signup(request):
         user.last_name = last_name
         user.save()
 <<<<<<< HEAD
+<<<<<<< HEAD
         return render(request, 'quiz_web/login.html')  
     return render(request, "quiz_web/signup.html")
     #redirect('/')
+=======
+        return render(request, 'quiz_web/login.html')
+    return render(request, "quiz_web/signup.html")
+>>>>>>> 70d17800cf70dac9e14a622e3c47a72d6e313508
 =======
         return render(request, 'quiz_web/login.html')
     return render(request, "quiz_web/signup.html")
