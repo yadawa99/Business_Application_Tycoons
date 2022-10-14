@@ -43,43 +43,6 @@ font-weight:bold ;
 #color:#FFA07A;
 font-weight:bold ;
 }
-.Tchr{
- position: absolute;
- top: 77.5%;
- left : 19.5%;
- transform: translate(-45%,-100%);
- filter: brightness(90%);
- border: 3px solid #460C09;
- border-radius: 5px;
-}
-.ITchr{
-color: white;
-text-align: center;
-padding: 8px;
-font-weight: bold;
-font-size: 14px;
-border-radius: 1px;
-background-color: #460C09;
-}
-.Stdnt{
- position: absolute;
- top: 77.5%;
- left : 79.5%;
- transform: translate(-45%,-100%);
- filter: brightness(90%);
- border: 3px solid #460C09;
- border-radius: 5px;
-}
-.IStdnt{
-color: white;
-text-align: center;
-padding: 8px;
-font-weight: bold;
-font-size: 14px;
-border-radius: 1px;
-background-color: #460C09;
-}
-
 .login__submit {
     position: absolute;
     left: 20%;
@@ -111,37 +74,6 @@ background-color: #460C09;
 	margin-left: auto;
 	color: #FA3030;
 }
-.login__submit2 {
-    position: absolute;
-    left: 80%;
-    top: 82.5%;
-    transform: translate(-50%, -10%);
-	background: #fff;
-	font-size: 18px;
-	padding: 16px 20px;
-	border-radius: 26px;
-	border: 1px solid #460C09;
-	text-transform: uppercase;
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	width: 25%;
-	color: #FA3030;
-	box-shadow: 0px 2px 2px #FA3030;
-	cursor: pointer;
-	transition: .2s;
-}
-.login__submit2:active,
-.login__submit2:focus,
-.login__submit2:hover {
-	border-color: #460C09;
-	outline: none;
-}
-.button__icon2 {
-	font-size: 24px;
-	margin-left: auto;
-	color: #FA3030;
-}
 
 
 </style>
@@ -160,40 +92,20 @@ background-color: #460C09;
     <hr class="w3-border-grey" style="margin:auto;width:60%;height:1px">
     <p class="w3-large w3-center">Spark Your Knowledge</p>
   </div>
-    <div class="Tchr">
-      <img src="{%static 'Image/8600.jpg'%}"
-           width="250"
-           height="200"
 
-      />
-        <div class="ITchr"><label for="Teacher">I am a teacher</label>
-        </div>
   </div>
   <div>
     <button class="button login__submit">
 
-            <span class="button__text">Log In or Sign Up as a Teacher</span>
+            <span class="button__text">Log In or Sign Up </span>
             <i class="button__icon fa fa-chevron-right"></i>
 
     </button>
   </div>
   </div>
-  <div class="Stdnt">
-      <img src="{%static 'Image/Study-area.jpg'%}"
-           width="250"
-           height="200"
 
-      />
-        <div class="IStdnt"><label for="Student">I am a student</label>
-        </div>
-    </div>
-  <div>
-    <button class="button login__submit2">
 
-            <span class="button__text">Log In or Sign Up as a Student</span>
-            <i class="button__icon fa fa-chevron-right"></i>
 
-    </button>
   </div>
 
 </body>
