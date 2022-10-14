@@ -43,3 +43,13 @@ def delete_question(request, myid):
         return redirect('/add_question')
     return render(request, "delete_question.html", {'question':question})
 
+def add_options(request, myid):
+    question = Question.objects.get(id=myid)
+    QuestionFormSet = inlineformset_factory(Question, Answer, fields=('content','correct', 'question'), extra=4)
+    if request.method=="POST":
+        formset = QuestionFormSet(request.POST, instance=question)
+        if formset.is_valid():
+            formset.save()
+            alert = True
+            return render(request, "add_options.html", {'alert':alert})
+
