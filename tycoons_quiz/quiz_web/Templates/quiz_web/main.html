@@ -100,6 +100,33 @@
     </div>
   </div>
 </div>
+<script>
+  const modalBtns = [...document.getElementsByClassName('modal-button')]
+  const modalBody = document.getElementById('modal-body')
+  const modaltitle = document.getElementById('modal-title')
+  const startQuiz = document.getElementById('start-quiz')
+
+  const url = window.location.href
+
+  modalBtns.forEach(modalBtn => modalBtn.addEventListener('click', () => {
+    const id = modalBtn.getAttribute('data-id')
+    const name = modalBtn.getAttribute('data-name')
+    const numberOfQuestions = modalBtn.getAttribute('data-questions')
+    const time = modalBtn.getAttribute('data-time')
+
+    modaltitle.innerHTML = `${name}`
+
+    modalBody.innerHTML = `
+    The ${name} consists of ${numberOfQuestions} questions and hence it is of ${numberOfQuestions} marks. You will be getting exactly ${time} seconds to complete ${numberOfQuestions} multiple choice questions. After completing the questions you can click on the
+          submit button to get your score and to understand the concept in which you made a mistake.<br>
+          All the best for the quiz!!!.
+    `
+
+    startQuiz.addEventListener('click', () => {
+      window.location.href = url + id
+    });
+  }));
+</script>
 {% end block %}
 
 
