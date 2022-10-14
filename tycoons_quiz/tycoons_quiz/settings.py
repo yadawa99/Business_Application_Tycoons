@@ -56,7 +56,7 @@ ROOT_URLCONF = 'tycoons_quiz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["quiz_web/template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
