@@ -35,3 +35,24 @@ def add_question(request):
     else:
         form=QuestionForm()
     return render(request, "add_question.html", {'form':form, 'questions':questions})
+
+def delete_question(request, myid):
+    question = Question.objects.get(id=myid)
+    if request.method == "POST":
+        question.delete()
+        return redirect('/add_question')
+    return render(request, "delete_question.html", {'question':question})
+
+def add_options(request, myid):
+    question = Question.objects.get(id=myid)
+    QuestionFormSet = inlineformset_factory(Question, Answer, fields=('content','correct', 'question'), extra=4)
+    if request.method=="POST":
+        formset = QuestionFormSet(request.POST, instance=question)
+        if formset.is_valid():
+            formset.save()
+            alert = True
+            return render(request, "add_options.html", {'alert':alert})
+        else:
+            formset=QuestionFormSet(instance=question)
+        return render(request, "add_options.html", {'formset':formset, 'question':question})
+
