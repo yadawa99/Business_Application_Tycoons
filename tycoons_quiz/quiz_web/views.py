@@ -69,4 +69,7 @@ def delete_result(request, myid):
         marks.delete()
         return redirect('/results')
     return render(request, "delete_result.html", {'marks':marks})
-
+def main(request):
+    quiz = Quiz.objects.all()
+    para = {'quiz' : quiz}
+    return render(request, "quiz_web/main.html", para)
