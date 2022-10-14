@@ -54,6 +54,7 @@ font-weight:bold ;
 	border-radius: 26px;
 	border: 1px solid #460C09;
 	text-transform: uppercase;
+	text-align: center;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
@@ -95,10 +96,12 @@ font-weight:bold ;
 
   </div>
   <div>
-    <button class="button login__submit">
+    <button class="button login__submit" >
+      <a href="{%url 'Login'%}">
 
             <span class="button__text">Log In or Sign Up </span>
-            <i class="button__icon fa fa-chevron-right"></i>
+      </a>
+      <i class="button__icon fa fa-chevron-right"></i>
 
     </button>
   </div>
