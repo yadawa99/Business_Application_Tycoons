@@ -147,7 +147,7 @@ def login(request):
         
         if user is not None:
             login(request, user)
-            return redirect("/")
+            return redirect("quiz_web/main.html")
         else:
             return render(request, "quiz_web/login.html")
     return render(request, "quiz_web/login.html")
