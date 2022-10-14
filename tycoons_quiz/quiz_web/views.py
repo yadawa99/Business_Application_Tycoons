@@ -149,8 +149,8 @@ def Login(request):
             login(request, user)
             return redirect("/")
         else:
-            return render(request, "login.html") 
-    return render(request, "login.html")
+            return render(request, "quiz_web/student_login.html") 
+    return render(request, "quiz_web/student_login.html")
 
 def Logout(request):
     logout(request)
