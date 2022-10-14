@@ -76,3 +76,63 @@ def main(request):
 def about_us(request):
     return render(request, 'quiz_web/about_us.html')
 
+@login_required(login_url = '/login')
+def quiz(request, myid):
+    quiz = Quiz.objects.get(id=myid)
+    return render(request, "quiz.html", {'quiz':quiz})
+
+def quiz_data_view(request, myid):
+    quiz = Quiz.objects.get(id=myid)
+    questions = []
+    for q in quiz.get_questions():
+        answers = []
+        for a in q.get_answers():
+            answers.append(a.content)
+        questions.append({str(q): answers})
+    return JsonResponse({
+        'data': questions,
+        'time': quiz.time,
+    })
+
+def save_quiz_view(request, myid):
+    if request.is_ajax():
+        questions = []
+        data = request.POST
+        data_ = dict(data.lists())
+
+        data_.pop('csrfmiddlewaretoken')
+
+        for k in data_.keys():
+            print('key: ', k)
+            question = Question.objects.get(content=k)
+            questions.append(question)
+
+        user = request.user
+        quiz = Quiz.objects.get(id=myid)
+
+        score = 0
+        marks = []
+        correct_answer = None
+
+        for q in questions:
+            a_selected = request.POST.get(q.content)
+
+            if a_selected != "":
+                question_answers = Answer.objects.filter(question=q)
+                for a in question_answers:
+                    if a_selected == a.content:
+                        if a.correct:
+                            score += 1
+                            correct_answer = a.content
+                    else:
+                        if a.correct:
+                            correct_answer = a.content
+
+                marks.append({str(q): {'correct_answer': correct_answer, 'answered': a_selected}})
+            else:
+                marks.append({str(q): 'not answered'})
+     
+        Marks_Of_User.objects.create(quiz=quiz, user=user, score=score)
+        
+        return JsonResponse({'passed': True, 'score': score, 'marks': marks})
+    
