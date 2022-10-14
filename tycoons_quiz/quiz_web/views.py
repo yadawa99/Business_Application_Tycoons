@@ -35,3 +35,11 @@ def add_question(request):
     else:
         form=QuestionForm()
     return render(request, "add_question.html", {'form':form, 'questions':questions})
+
+def delete_question(request, myid):
+    question = Question.objects.get(id=myid)
+    if request.method == "POST":
+        question.delete()
+        return redirect('/add_question')
+    return render(request, "delete_question.html", {'question':question})
+
