@@ -11,6 +11,9 @@ from django.forms import inlineformset_factory
 def home(response):
     return render(response, 'quiz_web/home.html')
 
+def main(response):
+    return render(response, 'quiz_web/main.html')
+
 def add_quizes(response):
     if response.method=="POST":
         form = QuizForm(data=response.POST)
