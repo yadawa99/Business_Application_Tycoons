@@ -1,16 +1,47 @@
 {% extends 'quiz_web/base.html' %}
 {% block title %} add Quizes {% endblock %}
+{% block css %}
+.qascreen {
+    background: linear-gradient(90deg, #460C09, #532525);
+    position: relative;
+    height: 600px;
+    width: 600px;
+    box-shadow: 0px 0px 24px #FA3030;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -40%);
+}
+form input{
+ color:#090808;
+ width:95%;
+ margin: 10px 10px 10px 10px;
+}
+.addq{
+ color:#FFF;
+ margin: 10px 10px 10px 10px;
+}
+.addqu{
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin: 10px 10px 10px 10px;
+}
 
+{% endblock %}
 {% block body %}
-<div>
+<div class="qascreen">
     <div>
-        <form action="/add_quizes/" method="POST"> {% csrf_token %}
-            {{form}}
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
+        <h1 class="addqu"> <b>Add Quiz</b> </h1>
+        <form action="/add_quizes/" method="POST">
+            {% csrf_token %}
+            <div class="addq">{{form.as_p}}</div>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit" >Submit</button>
+            </div>
+
     
         </form>
+    </div>
 </div>
 {% endblock %}
