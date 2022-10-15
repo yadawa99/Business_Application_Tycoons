@@ -2,9 +2,57 @@
 {% block title %} Results {% endblock %}
 
 {% block body %}
-<div class="container mt-4">
+<style>
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://wallpaperaccess.com/full/124383.jpg');
+  min-height: 100%;
+  width:100%;
+  background-position: center;
+  background-size: cover;
+  #opacity:0.9
+
+  }
+  .head1 {
+    color: #F2E21D;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+  }
+  .head2 {
+    color: #F99E1C;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  input[type=text] {
+  width: 100%;
+  padding: 4px 2px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  }
+  input[type=number] {
+  width: 100%;
+  padding: 4px 2px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  }
+  select {
+  width: 100%;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+</style>
+
+<div class="row py-3 p-4 bg-light rounded shadow-sm" style="  position: absolute; left: 50%; top: 25%;
+    transform: translate(-50%, -10%); background:linear-gradient(90deg, #460C09, #460C09);">
+    <h2 class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"
+        style="font-family:inherit;  text-align:center; width:100%; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;"><b>Results</b></h2>
       <br>
-      <table class="table">
+      <table class="table table-bordered" style="font-family: Times New Roman; color: white; width: 100%;">
         <thead>
           <tr>
             <th>User</th>
