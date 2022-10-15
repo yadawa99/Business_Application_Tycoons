@@ -6,7 +6,7 @@ urlpatterns = [
     path("<int:myid>/", views.quiz, name="quiz"),
     path('<int:myid>/data/', views.quiz_data_view, name='quiz-data'),
     path('<int:myid>/save/', views.save_quiz_view, name='quiz-save'),
-    # path("about_us/", views.about_us, name="about_us"),
+    path("about_us/", views.about_us, name="about_us"),
     path("edit/", views.edit, name="edit"),
 
     path("signup/", views.Signup, name="signup"),
