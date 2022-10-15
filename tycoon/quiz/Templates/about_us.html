@@ -2,6 +2,19 @@
 {% block title %}About_us{% endblock %}
 
 {% block css %}
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+
+
+body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://wallpaperaccess.com/full/124383.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+  #opacity:0.9
+
+}
 .acontainer {
     background: linear-gradient(90deg, #460C09, #532525);
     position: relative;
@@ -25,6 +38,8 @@
     font-size: 32px;
     margin: 15px 15px 15px 15px;
 }
+</style>
+
 {% endblock %}
 {% load static %}
 {% block body %}
