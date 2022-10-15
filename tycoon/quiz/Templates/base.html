@@ -31,7 +31,7 @@
       <span class="head2"> World</span>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#" style="padding-left: 15px; padding-top: 12%; color:#FFF; font-weight:bold;">Welcome {{request.user}}</a>
+          <a class="nav-link" href="#" style="padding-left: 15px; padding-right: 15px; padding-top: 12%; color:#FFF; font-weight:bold;">Welcome {{request.user}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout" style="padding-left: 5px; padding-top: 20%; color:#FFF; background-color:red; font-weight:bold;">Logout</a>
@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
              <li class="nav-item">
-              <a class="nav-link" href="{%url 'edit'%}" style="padding-left: 30px; padding-top: 17%;" >Edit</a>
+              <a class="nav-link" href="{%url 'edit'%}" style="padding-left: 30px; padding-top: 17%; font-weight:bold;" >Edit</a>
             </li>
           </ul>
         </div>
@@ -58,13 +58,13 @@
       <li><span class="head1" >Quiz</span>
         <span class="head2" >World</span></li>
       <li class="nav-item">
-        <a class="nav-link" href="{%url 'about_us'%}" style="padding-top: 15%; margin-left:20px; color:#FFF">About Us</a>
+        <a class="nav-link" href="{%url 'about_us'%}" style="padding-top: 15%; margin-left:20px; color:#FFF; font-weight:bold" >About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/signup" style="padding-left: 30px; padding-top: 15%; color:#FFF " >Sign Up</a>
+        <a class="nav-link" href="/signup" style="padding-left: 30px; padding-top: 17%; color:#FFF; " >Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login" style="padding-top: 25%; color:#FFF">Login</a>
+        <a class="nav-link" href="/login" style="padding-top:29%; color:#FFF">Login</a>
       </li>
     </ul>
 </div>
