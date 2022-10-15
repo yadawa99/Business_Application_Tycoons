@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %} Login Page {% endblock %}
+{% block css %}
+
+<style>
+    body,h1 {font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+
+
+    body {
+      background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://wallpaperaccess.com/full/124383.jpg');
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+      #opacity:0.9
+
+    }
+    .login__submit {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -10%);
+	background: #fff;
+	font-size: 18px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #460C09;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 25%;
+	color: #FA3030;
+	box-shadow: 0px 2px 2px #FA3030;
+	cursor: pointer;
+	transition: .2s;
+    }
+    .login__submit:active,
+    .login__submit:focus,
+    .login__submit:hover {
+    border-color: #460C09;
+    outline: none;
+    }
+    .button__icon {
+    font-size: 24px;
+    margin-left: auto;
+    color: #FA3030;
+    }
+	.login__submit2 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -10%);
+      background: #fff;
+      font-size: 18px;
+      padding: 16px 20px;
+      border-radius: 26px;
+      border: 1px solid #460C09;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      width: 25%;
+      color: #FA3030;
+      box-shadow: 0px 2px 2px #FA3030;
+      cursor: pointer;
+      transition: .2s;
+	}
+	.login__submit2:active,
+	.login__submit2:focus,
+	.login__submit2:hover {
+		border-color: #460C09;
+		outline: none;
+	}
+	.btn-primary{
+	margin-top: 10px;
+	}
+	.login__submit3 {
+      position: absolute;
+      left: 50%;
+      top: 75%;
+      transform: translate(-50%, -10%);
+      background: #fff;
+      font-size: 18px;
+      padding: 16px 20px;
+      border-radius: 26px;
+      border: 1px solid #460C09;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      width: 25%;
+      color: #FA3030;
+      box-shadow: 0px 2px 2px #FA3030;
+      cursor: pointer;
+      transition: .2s;
+	}
+	.login__submit3:active,
+	.login__submit3:focus,
+	.login__submit3:hover {
+		border-color: #460C09;
+		outline: none;
+	}
+	.btn-primary{
+	margin-top: 10px;
+	}
+
+
+    </style>
+    {% endblock %}
+
+
+
+
+  {% block body %}
+<div>
+    <button class="button login__submit" >
+      <a href="/add_quiz/">
+
+            <span class="button__text">Add Quiz to attempt </span>
+      </a>
+      <i class="button__icon fa fa-chevron-right"></i>
+
+    </button>
+
+    <button class="button login__submit2" >
+        <a href="/add_question/">
+            <span class="button__text">Add Questions to quizes </span>
+        </a>
+          <i class="button__icon fa fa-chevron-right"></i>
+
+    </button>
+
+    <button class="button login__submit3" >
+        <a href="/results/">
+            <span class="button__text">Results of the Users </span>
+        </a>
+          <i class="button__icon fa fa-chevron-right"></i>
+
+    </button>
+</div>
+
+
+
+
+  {% endblock %}
