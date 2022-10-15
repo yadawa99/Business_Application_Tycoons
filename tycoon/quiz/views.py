@@ -14,6 +14,10 @@ def index(request):
     return render(request, "index.html", para)
 
 
+def about_us(request):
+    return render(request, "about_us.html")
+
+
 @login_required(login_url='/login')
 def quiz(request, myid):
     quiz = Quiz.objects.get(id=myid)
@@ -33,8 +37,7 @@ def quiz_data_view(request, myid):
         'time': quiz.time,
     })
 
-def about_us(request):
-    return render(request, 'about_us.html')
+
 def save_quiz_view(request, myid):
     if request.is_ajax():
         questions = []
