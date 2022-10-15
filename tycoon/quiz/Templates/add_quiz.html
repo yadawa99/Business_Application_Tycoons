@@ -4,46 +4,55 @@
 {% block body %}
 
 <style>
-input[type=text], select {
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://wallpaperaccess.com/full/124383.jpg');
+  min-height: 100%;
+  width:100%;
+  background-position: center;
+  background-size: cover;
+  #opacity:0.9
+
+  }
+  .head1 {
+    color: #F2E21D;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+  }
+
+  .head2 {
+    color: #F99E1C;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  input[type=text] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 4px 2px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  }
+  input[type=number] {
+  width: 100%;
+  padding: 4px 2px;
+  margin: 4px 0;
   box-sizing: border-box;
 }
 
-input[type=number], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #f2f2g2;
-  padding: 20px;
-}
 </style>
 
-<div>
-    <div>
-        <form action="/add_quiz/" method="POST"> {% csrf_token %}
+<div class="row py-3 p-4 bg-light rounded shadow-sm" style="  position: absolute; left: 50%; top: 23%;
+    transform: translate(-50%, -10%); background:linear-gradient(90deg, #460C09, #460C09);">
+    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"
+        style="font-family:inherit;  text-align:center; width:100%; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;">
+        <h2><b>Add Quiz</b></h2>
+        <form class="row g-4" action="/add_quiz/" method="POST" style="width: 100%; padding-left: 20px; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF; text-align: left;"> {% csrf_token %}
             {{ form.as_p }}
     </div>
     
     <div style="padding-left: 40%;">
-        <button type="submit" class="btn btn-info" style="background-color:#7BC143; width: 50%;">Submit</button>
+        <button type="submit" class="btn btn-primary" style="background-color:#EE9307; width: 50%;">Submit</button>
     </div>
     
 </form>
