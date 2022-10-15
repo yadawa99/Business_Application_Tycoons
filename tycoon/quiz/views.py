@@ -14,10 +14,6 @@ def index(request):
     return render(request, "index.html", para)
 
 
-def about_us(request):
-    return render(request, "about_us.html")
-
-
 @login_required(login_url='/login')
 def quiz(request, myid):
     quiz = Quiz.objects.get(id=myid)
