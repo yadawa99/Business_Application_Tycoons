@@ -2,10 +2,54 @@
 {% block title %} Add Options {% endblock %}
 
 {% block body %}
-<div class="container mt-4">
-    <form action="/add_options/{{question.id}}/" method="POST"> {% csrf_token %}
+<style>
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://wallpaperaccess.com/full/124383.jpg');
+  min-height: 100%;
+  width:100%;
+  background-position: center;
+  background-size: cover;
+  #opacity:0.9
+
+  }
+  .head1 {
+    color: #F2E21D;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+  }
+  .head2 {
+    color: #F99E1C;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  input[type=text] {
+  width: 100%;
+  padding: 4px 2px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  }
+  input[type=number] {
+  width: 100%;
+  padding: 4px 2px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  }
+  input[type=] {
+  width: 100%;
+  padding: 4px 2px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  }
+
+</style>
+<div class="row py-3 p-4 bg-light rounded shadow-sm" style="  position: absolute; left: 50%; top: 30%;
+    transform: translate(-50%, -10%); background:linear-gradient(90deg, #460C09, #460C09);">
+    <form class="row g-4" action="/add_options/{{question.id}}/" method="POST" style="width: 100%; padding-left: 20px; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF; text-align: left;"> {% csrf_token %}
         {{ formset.as_p }}
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-primary"  style="background-color:#EE9307; width: 50%; margin: 20px; ">Submit</button>
     </form>
 </div>
 {% endblock %}
@@ -17,4 +61,3 @@ document.location = '/add_question/'
 {% endif %}
 </script>
 {% endblock %}
-
