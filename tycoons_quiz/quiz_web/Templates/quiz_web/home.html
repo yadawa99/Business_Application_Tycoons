@@ -75,7 +75,36 @@ font-weight:bold ;
 	margin-left: auto;
 	color: #FA3030;
 }
-
+	.login__submit2 {
+      position: absolute;
+      left: 50%;
+      top: 90%;
+      transform: translate(-50%, -10%);
+      background: #fff;
+      font-size: 18px;
+      padding: 16px 20px;
+      border-radius: 26px;
+      border: 1px solid #460C09;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      width: 25%;
+      color: #FA3030;
+      box-shadow: 0px 2px 2px #FA3030;
+      cursor: pointer;
+      transition: .2s;
+	}
+	.login__submit2:active,
+	.login__submit2:focus,
+	.login__submit2:hover {
+		border-color: #460C09;
+		outline: none;
+	}
+	.btn-primary{
+	margin-top: 10px;
+	}
 
 </style>
 {% load static%}
@@ -102,6 +131,13 @@ font-weight:bold ;
             <span class="button__text">Log In or Sign Up </span>
       </a>
       <i class="button__icon fa fa-chevron-right"></i>
+
+    </button>
+    <button class="button login__submit2" >
+        <a href="{%url 'signup'%}">
+            <span class="button__text">Sign Up </span>
+        </a>
+          <i class="button__icon fa fa-chevron-right"></i>
 
     </button>
   </div>
