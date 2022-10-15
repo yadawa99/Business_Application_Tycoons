@@ -27,14 +27,14 @@
 
       {% if user.is_authenticated %}
       <div class="collapse navbar-collapse" style="justify-content: flex-end" id="navbarSupportedContent"></div>
-      <span class="head1">Zimpliq</span> 
-      <span class="head2"> Quiz</span>
+      <span class="head1">Quiz</span>
+      <span class="head2"> World</span>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#" style="padding-left: 15px; padding-top: 15%;">Welcome {{request.user}}</a>
+          <a class="nav-link" href="#" style="padding-left: 15px; padding-top: 12%; color:#FFF; font-weight:bold;">Welcome {{request.user}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout" style="padding-left: 5px; padding-top: 30%;">Logout</a>
+          <a class="nav-link" href="/logout" style="padding-left: 5px; padding-top: 20%; color:#FFF; background-color:red; font-weight:bold;">Logout</a>
         </li>
 
         {% if user.is_superuser %}
