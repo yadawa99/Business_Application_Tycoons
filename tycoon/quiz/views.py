@@ -19,7 +19,8 @@ def quiz(request, myid):
     quiz = Quiz.objects.get(id=myid)
     return render(request, "quiz.html", {'quiz': quiz})
 
-
+def edit(request):
+    return render(request, 'edit.html')
 def quiz_data_view(request, myid):
     quiz = Quiz.objects.get(id=myid)
     questions = []
