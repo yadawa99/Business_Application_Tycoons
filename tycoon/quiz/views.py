@@ -33,8 +33,7 @@ def quiz_data_view(request, myid):
         'time': quiz.time,
     })
 
-def about_us(request):
-    return render(request, 'about_us.html')
+
 def save_quiz_view(request, myid):
     if request.is_ajax():
         questions = []

@@ -3,6 +3,17 @@
 {% block css %}
 
 <style>
+  body,h1 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://wallpaperaccess.com/full/124383.jpg');
+  min-height: 100%;
+  width:100%;
+  background-position: center;
+  background-size: cover;
+  #opacity:0.9
+
+}
   .head1 {
     color: #F2E21D;
     font-size: 2rem;
@@ -16,18 +27,20 @@
     font-weight: bold;
   }
 
+
   </style>
   {% endblock %}
   {% block body %}
 
-  <div class="row py-3 p-4 bg-light rounded shadow-sm">
+  <div class="row py-3 p-4 bg-light rounded shadow-sm" style="  position: absolute; left: 50%; top: 30%;
+    transform: translate(-50%, -10%); background:linear-gradient(90deg, #460C09, #460C09);">
 
     <div>
         <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"
-        style="font-family:inherit; color:black; text-align:center; width:100%;"><h2>Log into Zimpliq</h2></div>
+        style="font-family:inherit;  text-align:center; width:100%; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;"><h2><b>Log in</b></h2></div>
         <br>
 
-        <form class="row g-4" method="POST" action="/login/" style="width: 75%; padding-left: 40px;">{% csrf_token %}
+        <form class="row g-4" method="POST" action="/login/" style="width: 75%; padding-left: 40px; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;>{% csrf_token %}
             <div class="col-md-12">
                 <label for="inputname" class="form-label" style="font-weight: bold;"><i>
                         01. Username</i></label>
@@ -43,7 +56,7 @@
             </div>
 
             <div style="padding-left: 50%;">
-              <button type="submit" class="btn btn-primary" style="background-color: #7BC143; width: 50%;">Submit</button>
+              <button type="submit" class="btn btn-primary" style="background-color: #EE9307; width: 50%;">Submit</button>
             </div>
           </form>   
       
