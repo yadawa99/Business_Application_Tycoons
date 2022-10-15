@@ -40,7 +40,8 @@
         style="font-family:inherit;  text-align:center; width:100%; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;"><h2><b>Log in</b></h2></div>
         <br>
 
-        <form class="row g-4" method="POST" action="/login/" style="width: 75%; padding-left: 40px; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;>{% csrf_token %}
+        <form class="row g-4" method="POST" action="/login/" style="width: 75%; padding-left: 40px; background:linear-gradient(90deg, #460C09, #460C09); color:#FFF;">
+            {% csrf_token %}
             <div class="col-md-12">
                 <label for="inputname" class="form-label" style="font-weight: bold;"><i>
                         01. Username</i></label>
