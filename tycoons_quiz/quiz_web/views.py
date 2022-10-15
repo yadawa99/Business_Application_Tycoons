@@ -139,33 +139,48 @@ def save_quiz_view(request, myid):
         return JsonResponse({'passed': True, 'score': score, 'marks': marks})
 
 def login(request):
-    if request.user.is_authenticated:
-        return redirect('/')
     if request.method=="POST":
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
         
-        user = auth.authenticate(username=username, password=password)
+        user = authenticate(request, username=username, password=password)
         
         if user is not None:
             auth.login(request, user)
-            return redirect("quiz_web/main.html")
+            return redirect("main")
         else:
             return render(request, "quiz_web/login.html")
-    return render(request, "quiz_web/login.html")
 
-def Logout(request):
+    context = {}
+    return render(request, "quiz_web/login.html", context)
+
+def logout(request):
     logout(request)
     return redirect('quiz_web/login.html')
 
-def Signup(request):
+
+# def register(request):
+#     form = CreateUserForm()
+#
+#     if request.method == 'POST':
+#         form = CreateUserForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("quiz_web/login.html")
+#
+#     context = {'form': form}
+#     return render(request, "quiz_web/register.html", context)
+
+
+def signup(request):
     if request.user.is_authenticated:
         return redirect('/')
-    if request.method=="POST":
+    if request.method == "POST":
         username = request.POST['username']
         email = request.POST['email']
-        first_name=request.POST['first_name']
-        last_name=request.POST['last_name']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         password = request.POST['password1']
         confirm_password = request.POST['password2']
 
@@ -176,17 +191,5 @@ def Signup(request):
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-
         return render(request, 'quiz_web/login.html')
     return render(request, "quiz_web/signup.html")
-
-def register(request):
-    form = CreateUserForm()
-
-    if request.method == 'POST':
-        form = CreateUserForm(request.post)
-        if form.is_valid():
-            form.save()
-
-    context = {'form': form}
-    return render(request, "quiz_web/register.html", context)
